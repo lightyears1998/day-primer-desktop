@@ -1,0 +1,13 @@
+{
+  "name": "phase-desktop",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lightyears1998/phase-desktop.git"
+  },
+  "devDependencies": {
+    "electron": "^6.0.7"
+  }
+}
