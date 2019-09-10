@@ -2,8 +2,9 @@
 
 Coo, coo, coo...
 
-## Developer environment
+## Developer Environment
 
 ```sh
+# Install dependencies.
 yarn install
 ```
