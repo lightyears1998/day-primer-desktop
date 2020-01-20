@@ -1,17 +1,16 @@
 {
-  "name": "phase-desktop",
+  "name": "@lightyears1998/day-primer-desktop",
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lightyears1998/phase-desktop.git"
+    "url": "https://github.com/lightyears1998/day-primer-desktop.git"
   },
   "devDependencies": {
     "electron": "^7"
   },
   "dependencies": {
-    "antd": "^3.26.2",
-    "react": "^16.12.0"
+
   }
 }

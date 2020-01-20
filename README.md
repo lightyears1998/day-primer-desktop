@@ -1,4 +1,4 @@
-# Phase Desktop
+# DayPrimer Desktop
 
 Coo, coo, coo...
 
