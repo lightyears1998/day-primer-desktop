@@ -1,5 +1,9 @@
-// This script executes when BrowserWindows is created.
+// This script executes when BrowserWindow is created.
+
+import { isUnderDevelopment } from "./util";
+
 
 // Install Electron DevTool Devtron
-import devtron from "devtron";
-devtron.install();
+if (isUnderDevelopment()) {
+    require("devtron").install();
+}
