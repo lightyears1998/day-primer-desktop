@@ -1,8 +1,9 @@
 {
   "name": "@lightyears1998/day-primer-desktop",
+  "author": "lightyears1998 <lightyears1998@hotmail.com>",
   "version": "0.1.0",
   "main": "dist/main.js",
-  "license": "MIT",
+  "license": "MulanPSL-1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/lightyears1998/day-primer-desktop.git"
