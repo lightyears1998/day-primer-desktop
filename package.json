@@ -1,7 +1,7 @@
 {
   "name": "@lightyears1998/day-primer-desktop",
   "author": "lightyears1998 <lightyears1998@hotmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "license": "MulanPSL-1.0",
   "repository": {
@@ -11,14 +11,17 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts --fix",
     "lint:strict": "yarn lint --max-warnings 0",
-    "watch": "tsc --watch",
-    "start": "electron ./dist/main.js",
-    "dev": "electron ./dist/main.js --dev"
+    "build": "tsc",
+    "watch": "yarn build --watch",
+    "start": "cross-env APP_ENV=production electron ./dist/main.js",
+    "dev": "cross-env APP_ENV=development electron ./dist/main.js"
   },
   "devDependencies": {
     "@types/node": "^13.1.8",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
+    "chokidar": "^3.3.1",
+    "cross-env": "^6.0.3",
     "devtron": "^1.4.0",
     "electron": "^7.1.9",
     "eslint": "^6.8.0",
