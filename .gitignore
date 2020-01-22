@@ -1,5 +1,8 @@
+# Compiled JavaScript Files
+dist
+
 # Nodejs development
-/node_modules
+node_modules
 
 # Yarn
 yarn-error.log
