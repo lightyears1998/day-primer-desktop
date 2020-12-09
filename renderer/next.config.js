@@ -1,5 +1,1 @@
-module.exports = {
-  webpack: (config) => Object.assign(config, {
-    target: 'electron-renderer',
-  }),
-};
+module.exports = { webpack: (config) => Object.assign(config, { target: "electron-renderer" }) };
