@@ -1,0 +1,12 @@
+appId: net.qfstudio.dayprimer
+productName: Day Primer Desktop
+copyright: Copyright © 2020 Lightyears Xie
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null

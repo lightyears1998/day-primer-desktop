@@ -1,10 +1,3 @@
-# DayPrimer Desktop
+# Day Primer Desktop
 
-Coo, coo, coo...
-
-## Developer Environment
-
-```sh
-# Install dependencies.
-yarn install
-```
+Day Primer 桌面版

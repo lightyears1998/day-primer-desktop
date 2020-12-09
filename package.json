@@ -1,29 +1,30 @@
 {
+  "private": true,
   "name": "@lightyears1998/day-primer-desktop",
   "author": "lightyears1998 <lightyears1998@hotmail.com>",
-  "version": "0.1.0",
-  "main": "dist/main.js",
-  "license": "MulanPSL-1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lightyears1998/day-primer-desktop.git"
-  },
+  "description": "Day Primer Desktop",
+  "version": "1.0.0",
+  "main": "app/background.js",
   "scripts": {
-    "lint": "eslint ./src --ext .ts --fix",
-    "lint:strict": "yarn lint --max-warnings 0",
-    "watch": "tsc --watch",
-    "start": "electron ./dist/main.js",
-    "dev": "electron ./dist/main.js --dev"
+    "dev": "nextron",
+    "build": "nextron build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-serve": "^1.0.0",
+    "electron-store": "^6.0.1"
   },
   "devDependencies": {
-    "@types/node": "^13.1.8",
-    "@typescript-eslint/eslint-plugin": "^2.17.0",
-    "@typescript-eslint/parser": "^2.17.0",
-    "devtron": "^1.4.0",
-    "electron": "^7.2.4",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.0",
-    "typescript": "^3.7.5"
-  },
-  "dependencies": {}
+    "@material-ui/core": "^4.11.1",
+    "@types/node": "^14.6.4",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "electron": "^11.0.2",
+    "electron-builder": "^22.9.1",
+    "next": "^10.0.3",
+    "nextron": "^6.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "typescript": "^4.1.2"
+  }
 }
