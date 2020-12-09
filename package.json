@@ -7,7 +7,7 @@
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint main renderer --ext .js,jsx,.ts,.tsx",
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
