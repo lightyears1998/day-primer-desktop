@@ -7,6 +7,7 @@
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
+    "lint": "eslint . --ext .ts,.tsx",
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
@@ -15,12 +16,17 @@
     "electron-store": "^6.0.1"
   },
   "devDependencies": {
+    "@lightyears1998/eslint-config-lightyears-style": "^1.5.0",
     "@material-ui/core": "^4.11.1",
     "@types/node": "^14.6.4",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
     "electron": "^11.0.2",
     "electron-builder": "^22.9.1",
+    "eslint": "^7.15.0",
+    "eslint-plugin-import": "^2.22.1",
     "next": "^10.0.3",
     "nextron": "^6.0.1",
     "react": "^17.0.1",
