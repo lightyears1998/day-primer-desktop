@@ -1,20 +1,22 @@
 import {
   screen,
   BrowserWindow,
-  BrowserWindowConstructorOptions,
-} from 'electron';
-import Store from 'electron-store';
+  BrowserWindowConstructorOptions
+} from "electron";
+import Store from "electron-store";
 
 export default (windowName: string, options: BrowserWindowConstructorOptions): BrowserWindow => {
-  const key = 'window-state';
+  const key = "window-state";
   const name = `window-state-${windowName}`;
   const store = new Store({ name });
   const defaultSize = {
     width: options.width,
-    height: options.height,
+    height: options.height
   };
   let state = {};
-  let win;
+
+  /* eslint-disable prefer-const */
+  let win: BrowserWindow;
 
   const restore = () => store.get(key, defaultSize);
 
@@ -25,7 +27,7 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
       x: position[0],
       y: position[1],
       width: size[0],
-      height: size[1],
+      height: size[1]
     };
   };
 
@@ -42,7 +44,7 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
     const bounds = screen.getPrimaryDisplay().bounds;
     return Object.assign({}, defaultSize, {
       x: (bounds.width - defaultSize.width) / 2,
-      y: (bounds.height - defaultSize.height) / 2,
+      y: (bounds.height - defaultSize.height) / 2
     });
   };
 
@@ -72,12 +74,12 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
     ...state,
     webPreferences: {
       nodeIntegration: true,
-      ...options.webPreferences,
-    },
+      ...options.webPreferences
+    }
   };
   win = new BrowserWindow(browserOptions);
 
-  win.on('close', saveState);
+  win.on("close", saveState);
 
   return win;
 };
