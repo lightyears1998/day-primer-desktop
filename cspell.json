@@ -1,8 +1,9 @@
 {
     "version": "0.1",
     "words": [
-        "qfstudio",
-        "nextron"
+        "clsx",
+        "nextron",
+        "qfstudio"
     ],
     "allowCompoundWords": true
 }

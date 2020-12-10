@@ -1,10 +1,7 @@
-import fs from "fs";
-
-import React from "react";
+import { remote, shell } from "electron";
+import React, { useEffect } from "react";
 import Head from "next/head";
-import {
-  Theme, makeStyles, createStyles
-} from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -15,40 +12,37 @@ import Typography from "@material-ui/core/Typography";
 
 import Link from "../components/Link";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      textAlign: "center",
-      paddingTop: theme.spacing(4)
-    }
-  })
+const useStyles = makeStyles(() =>
+  createStyles({ root: { textAlign: "center" } })
 );
 
 const Home = (): JSX.Element => {
   const classes = useStyles({});
+
   const [open, setOpen] = React.useState(false);
+  const [documentPath, setDocumentPath] = React.useState("");
+
   const handleClose = () => setOpen(false);
-  const handleClick = () => setOpen(true);
+  const handleClick = () => {
+    setOpen(true);
+    documentPath && shell.openPath(documentPath);
+  };
 
-  fs.lstat(".", (err, stats) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-
-    console.log(stats);
-  });
+  useEffect(() => {
+    const app = remote.app;
+    setDocumentPath(app.getPath("documents"));
+  }, []);
 
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-typescript-material-ui)</title>
+        <title>Home</title>
       </Head>
       <div className={classes.root}>
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle>Super Secret Password</DialogTitle>
           <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
+            <DialogContentText>{documentPath}</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button color="primary" onClick={handleClose}>
@@ -67,7 +61,7 @@ const Home = (): JSX.Element => {
           <Link href="/next">Go to the next page</Link>
         </Typography>
         <Button variant="contained" color="secondary" onClick={handleClick}>
-          Super Secret Password
+          打开数据文件夹
         </Button>
       </div>
     </React.Fragment>

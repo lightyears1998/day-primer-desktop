@@ -6,7 +6,7 @@ import type { AppProps } from "next/app";
 
 import { theme } from "../lib/theme";
 
-export default function (props: AppProps): JSX.Element {
+export default function MyApp(props: AppProps): JSX.Element {
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ export default function (props: AppProps): JSX.Element {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <title>with-typescript-material-ui</title>
+        <title>Day Primer Desktop</title>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

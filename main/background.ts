@@ -1,5 +1,8 @@
+import path from "path";
+
 import { app } from "electron";
 import serve from "electron-serve";
+import { ensureDir } from "fs-extra";
 
 import { createWindow } from "./helpers";
 
@@ -12,6 +15,10 @@ if (isProd) {
 }
 
 (async () => {
+  const appDocumentsPath = path.resolve(app.getPath("documents"), "./DayPrimer");
+  await ensureDir(appDocumentsPath);
+  app.setPath("documents", appDocumentsPath);
+
   await app.whenReady();
 
   const mainWindow = createWindow("main", {

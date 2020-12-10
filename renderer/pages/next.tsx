@@ -23,7 +23,7 @@ const Next = (): JSX.Element => {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-material-ui)</title>
+        <title>Next Page</title>
       </Head>
       <div className={classes.root}>
         <Typography variant="h4" gutterBottom>
