@@ -1,10 +1,13 @@
+import "reflect-metadata";
 import path from "path";
 
 import { app } from "electron";
 import serve from "electron-serve";
 import { ensureDir } from "fs-extra";
+import { createConnection } from "typeorm";
 
 import { createWindow } from "./helpers";
+import { createDatabaseConnection } from "./database";
 
 const isProd: boolean = process.env.NODE_ENV === "production";
 
@@ -18,6 +21,8 @@ if (isProd) {
   const appDocumentsPath = path.resolve(app.getPath("documents"), "./DayPrimer");
   await ensureDir(appDocumentsPath);
   app.setPath("documents", appDocumentsPath);
+
+  await createDatabaseConnection(appDocumentsPath);
 
   await app.whenReady();
 

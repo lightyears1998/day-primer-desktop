@@ -3,28 +3,23 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogActions from "@material-ui/core/DialogActions";
 import Typography from "@material-ui/core/Typography";
+import { DataGrid } from "@material-ui/data-grid";
 
-import Link from "../components/Link";
-
-const useStyles = makeStyles(() =>
-  createStyles({ root: { textAlign: "center" } })
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    root: {
+      textAlign: "center", paddingTop: theme.spacing(4), paddingBottom: theme.spacing(4)
+    }
+  })
 );
 
 const Home = (): JSX.Element => {
   const classes = useStyles({});
 
-  const [open, setOpen] = React.useState(false);
   const [documentPath, setDocumentPath] = React.useState("");
 
-  const handleClose = () => setOpen(false);
-  const handleClick = () => {
-    setOpen(true);
+  const openDocumentPath = () => {
     documentPath && shell.openPath(documentPath);
   };
 
@@ -36,31 +31,32 @@ const Home = (): JSX.Element => {
   return (
     <React.Fragment>
       <Head>
-        <title>Home</title>
+        <title>DayPrimer | Home</title>
       </Head>
       <div className={classes.root}>
-        <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
-          <DialogContent>
-            <DialogContentText>{documentPath}</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button color="primary" onClick={handleClose}>
-              OK
-            </Button>
-          </DialogActions>
-        </Dialog>
-        <Typography variant="h4" gutterBottom>
-          Material-UI
+        <Typography variant="h6" gutterBottom>
+          时间线
         </Typography>
-        <Typography variant="subtitle1" gutterBottom>
-          with Nextron
+        <Button>开始记录行动</Button>
+
+        <Typography variant="h6" gutterBottom>
+          项目
         </Typography>
-        <img src="/images/logo.png" />
-        <Typography gutterBottom>
-          <Link href="/next">Go to the next page</Link>
+        <Button>添加项目</Button>
+        <Button>编辑项目</Button>
+        <Button>删除项目</Button>
+
+        <Typography variant="h6" gutterBottom>
+          行动
         </Typography>
-        <Button variant="contained" color="secondary" onClick={handleClick}>
+        <Button>添加行动</Button>
+        <Button>编辑行动</Button>
+        <Button>删除行动</Button>
+
+        <Typography variant="h6" gutterBottom>
+          开发人员工具
+        </Typography>
+        <Button variant="contained" color="secondary" onClick={openDocumentPath}>
           打开数据文件夹
         </Button>
       </div>

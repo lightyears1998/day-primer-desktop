@@ -4,6 +4,7 @@
     "lib": [
       "dom",
       "dom.iterable",
+      "es6",
       "esnext"
     ],
     "allowJs": true,
@@ -16,7 +17,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules",
