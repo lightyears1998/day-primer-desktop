@@ -3,7 +3,7 @@
   "name": "@lightyears1998/day-primer-desktop",
   "author": "lightyears1998 <lightyears1998@hotmail.com>",
   "description": "Day Primer Desktop",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
